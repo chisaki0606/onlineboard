@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
     if @post.save
-      redirect_to("/posts/index")
+      redirect_to("/")
     else
       render("posts/edit")
     end

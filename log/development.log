@@ -461,3 +461,274 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 187ms (Views: 160.5ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/" for 172.22.0.1 at 2020-08-10 18:12:05 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (10.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (6.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 767ms (Views: 694.5ms | ActiveRecord: 38.3ms)
+
+
+Started GET "/posts/2" for 172.22.0.1 at 2020-08-10 18:12:09 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (4.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 297ms (Views: 239.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/posts/2/edit" for 172.22.0.1 at 2020-08-10 18:12:13 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 265ms (Views: 234.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/posts/2/update" for 172.22.0.1 at 2020-08-10 18:12:24 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M6xkXRyLObPxMLaGAL2/L4khaSRdZohJNrq8Oa0+32e4cTs+fHYNjZL+uxMLKTK0ZD6x184wq4PRzurKfA+ATQ==", "content"=>"", "id"=>"2"}
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:31
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:31
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 338ms (Views: 300.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/posts/2/update" for 172.22.0.1 at 2020-08-10 18:12:27 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0wiEzofOPdVyO41bggl2Sh07+D1NeNyAufr5OpHhQPVY1dut5zMJ6xH1gM6JnfvR8CQgzt4u/0pejq/JQNAf3w==", "content"=>"flying tiger Copenhagen", "id"=>"2"}
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:31
+Redirected to http://localhost:3000/posts/index
+Completed 302 Found in 14ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/posts/index" for 172.22.0.1 at 2020-08-10 18:12:27 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (32.4ms)
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `content' for nil:NilClass):
+    1: <div class="main-posts-show">
+    2:   <div class="posts-show-container">
+    3:     <div class="posts-show-item">
+    4:       <%= @post.content %>
+    5:       <div class="post-time">
+    6:         <%= @post.created_at %>
+    7:       </div>
+  
+app/views/posts/show.html.erb:4:in `_app_views_posts_show_html_erb___2873999419390271405_70294094623420'
+Started GET "/posts/2/edit" for 172.22.0.1 at 2020-08-10 18:13:41 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 176ms (Views: 124.5ms | ActiveRecord: 17.4ms)
+
+
+Started POST "/posts/2/update" for 172.22.0.1 at 2020-08-10 18:13:43 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qc9plV15rHuBxK8RmfQCG5JUYjqsPtPu3NDns2TwF1PKEjb2PYSYReIKooSSYI+Af0u6yT9o8CQ7pLFAtcFIeQ==", "content"=>"flying tiger Copenhagen", "id"=>"2"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:31
+Redirected to http://localhost:3000/posts/index
+Completed 302 Found in 11ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/index" for 172.22.0.1 at 2020-08-10 18:13:43 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (18.7ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `content' for nil:NilClass):
+    1: <div class="main-posts-show">
+    2:   <div class="posts-show-container">
+    3:     <div class="posts-show-item">
+    4:       <%= @post.content %>
+    5:       <div class="post-time">
+    6:         <%= @post.created_at %>
+    7:       </div>
+  
+app/views/posts/show.html.erb:4:in `_app_views_posts_show_html_erb___2873999419390271405_70294153281200'
+Started GET "/" for 172.22.0.1 at 2020-08-10 18:13:56 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 270ms (Views: 242.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/2" for 172.22.0.1 at 2020-08-10 18:13:58 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 165ms (Views: 147.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/2/edit" for 172.22.0.1 at 2020-08-10 18:14:00 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 265ms (Views: 217.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts/2/update" for 172.22.0.1 at 2020-08-10 18:14:03 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vZJssUE9KnxzMXWHwqzlUms+kz0KW0Ns0ECX0JJVV0M2TzPSIcAeQhD/eBLJOGjJhiFLzpkNYKY3NMEjQ2QIaQ==", "content"=>"flying tiger Copenhagen", "id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:31
+Redirected to http://localhost:3000/posts/index
+Completed 302 Found in 11ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/index" for 172.22.0.1 at 2020-08-10 18:14:03 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (24.2ms)
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `content' for nil:NilClass):
+    1: <div class="main-posts-show">
+    2:   <div class="posts-show-container">
+    3:     <div class="posts-show-item">
+    4:       <%= @post.content %>
+    5:       <div class="post-time">
+    6:         <%= @post.created_at %>
+    7:       </div>
+  
+app/views/posts/show.html.erb:4:in `_app_views_posts_show_html_erb___2873999419390271405_70294052461820'
+Started GET "/" for 172.22.0.1 at 2020-08-10 18:14:45 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 319ms (Views: 228.7ms | ActiveRecord: 33.1ms)
+
+
+Started GET "/posts/2" for 172.22.0.1 at 2020-08-10 18:14:47 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 277ms (Views: 244.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/2/edit" for 172.22.0.1 at 2020-08-10 18:14:49 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 248ms (Views: 208.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts/2/update" for 172.22.0.1 at 2020-08-10 18:14:53 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OXPXC44pL1ee09Pc/kXxPN5bIXR6zWiuf/keSl96STWyroho7tQbaf0d3kn10XynM0T5h+mbS2SYjUi5jksWHw==", "content"=>"", "id"=>"2"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:31
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:31
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 227ms (Views: 216.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/posts/2/update" for 172.22.0.1 at 2020-08-10 18:14:57 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j1AcA6Py/WOh74h1eA3M21Px8slrb4VN0sn73JSu7okEjUNgww/JXcIhheBzmUFAvu4qOvg5poc1va0vRZ+xow==", "content"=>"flying tiger Copenhagen", "id"=>"2"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:31
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 172.22.0.1 at 2020-08-10 18:14:57 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 262ms (Views: 232.4ms | ActiveRecord: 2.2ms)
+
+
