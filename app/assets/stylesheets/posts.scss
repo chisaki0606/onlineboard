@@ -32,6 +32,22 @@ header {
   font-size: 24px;
 }
 
+.header-menus {
+  float: right;
+}
+
+.header-menus li{
+  list-style: none;
+  float: left;
+  font-size: 18px;
+  padding: 20px 40px 0px 0px; 
+}
+
+.header-menus a{
+  text-decoration: none;
+  color: #fff;
+}
+
 /*ここからTopページ*/
 
 .main-posts-index {
