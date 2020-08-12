@@ -1450,3 +1450,70 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 192ms (Views: 159.0ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/" for 172.22.0.1 at 2020-08-12 00:33:44 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 246ms (Views: 201.2ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/signup" for 172.22.0.1 at 2020-08-12 00:33:50 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 244ms (Views: 219.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/create" for 172.22.0.1 at 2020-08-12 00:34:13 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LqPOHVkxb9z+5xrV4D7IeJzHt6YXmUHbe3HxdC1rB3A98hsEIY0D8Rd1D2vWRi9xcPfD4ZHhhy7lyrYyqQDObw==", "name"=>"Tatsuki", "email"=>"tatsuki@gmail.com"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tatsuki@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tatsuki"], ["email", "tatsuki@gmail.com"], ["created_at", "2020-08-12 00:34:13.390699"], ["updated_at", "2020-08-12 00:34:13.390699"]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 14ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/users/3" for 172.22.0.1 at 2020-08-12 00:34:13 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 187ms (Views: 161.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/1" for 172.22.0.1 at 2020-08-12 00:34:18 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 162ms (Views: 141.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/2" for 172.22.0.1 at 2020-08-12 00:34:22 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 243ms (Views: 215.5ms | ActiveRecord: 2.8ms)
+
+
