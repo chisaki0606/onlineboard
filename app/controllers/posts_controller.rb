@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :authenticate_user
+
   def index
     # "Post.all"は全てのPostデータを取り出すコード
     # "order(created_at: :desc)"は出力される順番を新規が上部になるよう変更するコード

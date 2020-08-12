@@ -15,7 +15,10 @@
         <%= link_to("おんらいんch", "/") %>
       </div>
       <ul class="header-menus">
-        <% if session[:user_id] %>
+        <% if @current_user %>
+          <li>
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+          </li>
           <li>
             <%= link_to("新規投稿", "/posts/new") %>
           </li>
@@ -32,7 +35,11 @@
         <% end %>
       </ul>
     </header>
-
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
